@@ -1,0 +1,251 @@
+/* start Variables */
+:root {
+  --page-theme: #f67475;
+}
+/* Start Main Rules */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(22, 25, 50);
+  font-family: sans-serif;
+  height: 100vh;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main.blur {
+  opacity: 50%;
+}
+h1 {
+  color: #d7e0ff;
+}
+.btns-container {
+  background-color: #1e213f;
+  border-radius: 30px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  width: 400px;
+}
+button {
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 30px;
+  width: 30%;
+  padding: 15px 0;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* Start Timer */
+
+.btns-container .active {
+  background-color: var(--page-theme);
+  color: rgb(22, 25, 50);
+}
+.timer-container {
+  border: 6px solid #474c66;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  cursor: pointer;
+}
+
+.timer {
+  width: 90%;
+  height: 90%;
+  border: 10px solid var(--page-theme);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.time {
+  font-size: 5.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #d7e0ff;
+}
+.state {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d7e0ff;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+}
+
+/* Start Context Menu */
+.close-context {
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: var(--page-theme);
+  width: 23px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.gear {
+  color: #a9b1ce;
+  font-size: 1.3rem;
+  cursor: pointer;
+  animation: 3s gearRotate forwards infinite linear;
+  border: 2.5px solid transparent;
+}
+.gear.active,
+.gear:hover {
+  animation: pause;
+  padding-top: 1px;
+  width: 38px;
+  height: 38px;
+  border: 2.5px solid var(--page-theme);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 50%;
+}
+
+.context-menu {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  position: fixed;
+  display: none;
+  transition: 0.3s;
+}
+.context-menu.active {
+  display: block;
+}
+.submit {
+  content: "Apply";
+  color: #fff;
+  padding: 8px 32px;
+  background-color: var(--page-theme);
+  border-radius: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.context-menu div:only-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 0;
+  border-top: 2px solid #eff1fa;
+}
+li:not(:nth-child(1)) {
+  justify-content: space-between;
+  align-items: center;
+}
+li:nth-child(1) {
+  flex-direction: column;
+}
+h5 {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+form {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0;
+}
+label {
+  font-size: 0.8rem;
+  display: block;
+  margin: 0 10px;
+}
+input {
+  width: 100px;
+  height: 30px;
+  padding: 12px 6px;
+  font-weight: bold;
+  margin: 5px 10px;
+  border-radius: 8px;
+  background-color: #eff1fa;
+  outline: none;
+  border: 5px solid transparent;
+}
+input:focus {
+  border: 5px #d7e0ff solid;
+}
+.context-menu button:not(.submit) {
+  background-color: #eff1fa;
+  color: inherit;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+li:nth-child(2) button.active {
+  background-color: #161932;
+  color: #fff;
+}
+
+li:nth-child(2) button:nth-child(2) {
+  font-family: cursive;
+}
+li:nth-child(2) button:nth-child(3) {
+  font-family: "Times New Roman";
+}
+li:last-child button.active::after {
+  font: var(--fa-font-solid);
+  content: "\f00c";
+}
+li:last-child button:nth-child(1) {
+  background-color: #f67475;
+}
+li:last-child button:nth-child(2) {
+  background-color: #70f3f8;
+}
+li:last-child button:nth-child(3) {
+  background-color: #d881f8;
+}
+
+/* animations */
+
+@keyframes gearRotate {
+  100% {
+    transform: rotate(180deg);
+  }
+}

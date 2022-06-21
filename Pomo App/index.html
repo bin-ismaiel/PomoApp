@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomo</title>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/all.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>pomodoro</h1>
+      <div class="btns-container">
+        <button data-state="pomo">pomodoro</button>
+        <button class="active" data-state="short">short break</button>
+        <button data-state="long">long break</button>
+      </div>
+      <div class="timer-container">
+        <div class="timer">
+          <span class="time"></span>
+          <span class="state">start</span>
+        </div>
+      </div>
+      <i class="fa-solid fa-gear gear"></i>
+    </main>
+    <audio class="notfi">
+      <source src="js/notfi.mp3" />
+    </audio>
+    <audio class="ticker">
+      <source src="js/ticker.mp3" />
+    </audio>
+    <!-- Start Context Menu -->
+
+    <div class="context-menu">
+      <div>
+        <h3>Settings</h3>
+        <div class="gearholder">
+          <i class="fa-solid fa-xmark close-context"></i>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <h5>time (minutes)</h5>
+          <form action="">
+            <div>
+              <label for="">pomodoro</label
+              ><input type="number" name="" id="pomo" />
+            </div>
+            <div>
+              <label for="">short-break</label>
+              <input type="number" name="" id="short" />
+            </div>
+            <div>
+              <label for="">long-break</label>
+              <input type="number" name="" id="long" />
+            </div>
+          </form>
+        </li>
+        <li>
+          <h5>font</h5>
+          <div>
+            <button class="active" data-font="arial">Aa</button>
+            <button data-font="cursive">Aa</button>
+            <button data-font="roman">Aa</button>
+          </div>
+        </li>
+        <li>
+          <h5>color</h5>
+          <div>
+            <button class="active" data-color="pink"></button>
+            <button data-color="baby-blue"></button>
+            <button data-color="purple"></button>
+          </div>
+        </li>
+      </ul>
+      <button class="submit">Apply</button>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>

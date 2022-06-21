@@ -1,0 +1,7 @@
+add var to css
+try to minmize js to functions
+put vars in their right place
+gear holder
+local storage
+circle progress
+when x ends y start
